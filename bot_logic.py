@@ -9,14 +9,14 @@ def gen_pass(pass_length):
 
     return password
 
-def gen_emodji():
-    emodji = ["\U0001f600", "\U0001f642", "\U0001F606", "\U0001F923"]
-    return random.choice(emodji)
-
 def flip_coin():
-    flip = random.randint(0, 2)
-    if flip == 0:
-        return "HEADS"
-    else:
-        return "TAILS"
- 
+    coins = ["Heads", "Tails"]
+    return random.choice(coins)
+
+def roll_die(sides):
+    sides = [4, 6, 8, 10, 12, 20]
+    return random.randint(1, sides)
+
+def pick_random(items):
+    items = ["Bagel", "Croissant", "Muffin", "Donut", "Scone"]
+    return random.choice(items)
