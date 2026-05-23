@@ -49,3 +49,27 @@ def get_cat_image():
         return data[0]['url']
     else:
         return None
+
+def get_waste_type(waste):
+    waste.lower().strip()
+    non_recyclable = ['plastic bag', 'styrofoam', 'ceramics', 'diapers', 'cigarette butts', 'plastic utensils', 'plastic straws']
+    recyclable = ['paper', 'cardboard', 'glass', 'metal', 'plastic bottle', 'aluminum can', 'plastic container']
+    compostable = ['food scraps', 'yard waste', 'paper towels', 'coffee grounds', 'egg shells', 'tea bags']
+
+    if waste in non_recyclable:
+        return 'Non-recyclable'
+    elif waste in recyclable:
+        return 'Recyclable'
+    elif waste in compostable:
+        return 'Compostable'
+    else:
+        return 'Unknown waste type'
+    
+def reduce_waste_tips(how_many):
+    tips = [
+        "Cobalah untuk menghindari penggunaan barang sekali pakai, seperti gelas dan botol plastik.",
+        "Pindah ke e-reader untuk mengurangi konsumsi kertas.",
+        "Pilih produk bahan makanan dan makanan ringan dengan kemasan sesedikit mungkin, beli makanan berdasarkan beratnya (tanpa kemasan), dan cobalah beralih ke tas yang dapat digunakan kembali."
+        "Cobalah untuk mendaur ulang. Sediakan tempat sampah khusus untuk produk yang dapat didaur ulang dan pindahkan ke tempat daur ulang setelah penuh."
+    ]
+    return random.choices(tips, k=how_many)
